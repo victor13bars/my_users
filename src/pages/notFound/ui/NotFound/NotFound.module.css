@@ -1,0 +1,7 @@
+.notFound {
+    margin-top: 20px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    color: black;
+  }

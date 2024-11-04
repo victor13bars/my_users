@@ -1,0 +1,34 @@
+.card {
+  margin: 15px 20px 0 20px;
+  padding: 20px;
+  background-color: rgb(136, 136, 230);
+  border-radius: 10px;
+  border: 2px solid gray;
+
+  .username {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .name {
+    margin-bottom: 5px;
+  }
+
+  .email a {
+    color: lightgray;
+    cursor: pointer;
+    text-decoration: underline;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  .buttonSlot {
+    margin-top: 10px;
+    display: flex;
+    gap: 5px;
+  }
+}
