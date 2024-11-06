@@ -1,5 +1,6 @@
-import { useArrayithoutFavorites } from "../../../../features/user/hooks/useArrayWithoutFavorites";
-import { useGetAllUsersQuery } from "../../../../widgets/UserList/api/usersApi";
+import { useGetAllUsersQuery } from "../../../../entities/user/api/usersApi";
+import { useArrayithoutFavorites } from "../../../../entities/user/utils/hooks/useArrayWithoutFavorites";
+
 import { UserList } from "../../../../widgets/UserList/ui/UserList/UsersList";
 
 import styles from "./MainPage.module.css";

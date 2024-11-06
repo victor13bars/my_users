@@ -6,7 +6,6 @@ const initialState: IUserStateType = {
   foundFavorites: [],
   selectedUser: null,
   searchValue: "",
-  isModal: false,
 };
 
 export const usersSlice = createSlice({
@@ -45,17 +44,7 @@ export const usersSlice = createSlice({
       );
       localStorage.users = JSON.stringify(state.users);
     },
-    openModal(state) {
-      state.isModal = true;
-    },
-
-    closeModal(state) {
-      state.isModal = false;
-      if (!state.isModal) {
-        state.selectedUser = null;
-      }
-    },
-    selectUser(state, action: PayloadAction<IUserCardType>) {
+    selectUser(state, action: PayloadAction<IUserCardType | null>) {
       state.selectedUser = action.payload;
     },
     createUser(state, action: PayloadAction<NewUserType>) {
@@ -80,8 +69,6 @@ export const {
   searchFavorite,
   addToFavorites,
   removeFromFavorites,
-  openModal,
-  closeModal,
   selectUser,
   editUser,
   createUser,

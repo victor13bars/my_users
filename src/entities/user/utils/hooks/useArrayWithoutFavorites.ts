@@ -1,5 +1,5 @@
-import { IUserCardType } from "../../../entities/user/model/types";
-import { useAppSelector } from "../../../shared/store/store";
+import { IUserCardType } from "../../model/types";
+import { useAppSelector } from "../../../../app/store/store";
 
 export const useArrayithoutFavorites = (arr: IUserCardType[] = []) => {
   const users = useAppSelector((state) => state.users.users);

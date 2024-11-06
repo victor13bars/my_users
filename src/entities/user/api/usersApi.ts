@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { IUser } from "../model/types";
 import { IUserCardType } from "../../../entities/user/model/types";
+import { IUser } from "../../../widgets/UserList/model/types";
 
 export const usersApi = createApi({
   reducerPath: 'usersApi',

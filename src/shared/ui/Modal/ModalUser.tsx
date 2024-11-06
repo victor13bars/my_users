@@ -1,33 +1,20 @@
 import React, { useEffect, useRef } from "react";
 import styles from "./ModalUser.module.css";
-import { IModalProps, IModalUniversalProps } from "../../model/types";
-
-
+import { IModalProps, IModalUniversalProps } from "../../types/ModalType";
+import { useOnClickOutside } from "../../../entities/user/utils/hooks/useOnClickOutside";
 
 export const ModalUser = ({
+  ref,
   children,
   className,
   isOpen = true,
   onClose,
 }: IModalProps) => {
-  const ref = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const handleClick = (event: Event) => {
-      if (!ref?.current?.contains(event?.target as Node)) {
-        onClose();
-      }
-    };
-
-    document.addEventListener("mousedown", handleClick);
-    return () => {
-      document.removeEventListener("mousedown", handleClick);
-    };
-  }, [onClose]);
-
+  useOnClickOutside(ref, onClose);
   if (!isOpen) {
     return null;
   }
+
   return (
     <div className={styles.modalContainer}>
       <div ref={ref} data-id="modal" className={styles.modal + " " + className}>

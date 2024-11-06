@@ -18,5 +18,4 @@ export interface IUserStateType {
   foundFavorites: IUserCardType[];
   selectedUser: IUserCardType | null;
    searchValue: string;
-  isModal: boolean;
 }

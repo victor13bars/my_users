@@ -1,7 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch, useSelector } from "react-redux";
 import usersReducer from "../../entities/user/model/userSlice";
-import { usersApi } from "../../widgets/UserList/api/usersApi";
+import { usersApi } from "../../entities/user/api/usersApi";
+
 
 export const store = configureStore({
   reducer: {

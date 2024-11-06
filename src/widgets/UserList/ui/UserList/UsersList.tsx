@@ -6,18 +6,20 @@ import { Button } from "../../../../shared/ui/Button/Button";
 import { useDispatch } from "react-redux";
 import {
   addToFavorites,
-  openModal,
   removeFromFavorites,
 } from "../../../../entities/user/model/userSlice";
 import { selectUser } from "../../../../entities/user/model/userSlice";
 
-export const UserList: React.FC<UserListPropsType> = ({ data, isFavorite }) => {
-
+export const UserList: React.FC<UserListPropsType> = ({
+  data,
+  isFavorite,
+  openModal,
+}) => {
   const dispatch = useDispatch();
 
   const handleOpenModal = (user: IUser) => {
     dispatch(selectUser(user));
-    dispatch(openModal());
+    openModal && openModal();
   };
   const addUser = (user: IUser) => {
     dispatch(addToFavorites(user));
